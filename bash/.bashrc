@@ -15,5 +15,4 @@ fi
 
 
 # Put your fun stuff here.
-TERM=xterm
 EDITOR=vim
