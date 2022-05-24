@@ -6,8 +6,8 @@
 ## to clean up.
 #
 ## Adds `~/.local/bin` to $PATH
-export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
-#
+export PATH=$HOME/.local/bin:$PATH
+
 #unsetopt PROMPT_SP
 #
 ## Default programs:
@@ -16,5 +16,5 @@ export TERMINAL="st"
 #export BROWSER="brave"
 #
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
+	  exec startx
 fi

@@ -1,6 +1,6 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
-
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -11,6 +11,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'scrooloose/nerdcommenter'
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -29,7 +31,6 @@ nmap ++ <plug>NERDCommenterToggle
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
-
 let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "let g:NERDTreeGitStatusNodeColorization = 1
@@ -64,8 +65,10 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-set relativenumber
-
+syntax enable
+"set relativenumber
+set number
+set cursorline
 set smarttab
 set cindent
 set tabstop=2
@@ -74,7 +77,7 @@ set shiftwidth=2
 set expandtab
 
 colorscheme gruvbox
-
+let g:airline_theme='gruvbox'
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
