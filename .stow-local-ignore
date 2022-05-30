@@ -26,5 +26,7 @@ misc
 \.log
 
 ^/README.*
+^/readme.*
 ^/LICENSE.*
+^/license.*
 ^/COPYING
